@@ -1,6 +1,6 @@
 (* ::Package:: *)
 
-(* ::Title::Closed:: *)
+(* ::Title:: *)
 (*Setup*)
 
 
@@ -33,6 +33,10 @@
 (*No Mathematica built-in symbol is used as a local variable name anywhere in*)
 (*this chapter. In particular, the Choi matrix argument is always choiMat,    *)
 (*never D (reserved as the derivative operator).                              *)
+
+
+
+
 
 
 
@@ -257,7 +261,7 @@
 (*    {k, 1, nKeep}];*)
 
 
-(* ::Chapter:: *)
+(* ::Chapter::Closed:: *)
 (*Model and Bipartition*)
 
 
@@ -280,7 +284,7 @@
 (*J  = 1;      (* ZZ coupling *)*)
 (*hx = 1;      (* transverse field *)*)
 (*hz = 0.5;    (* longitudinal field; hz != 0 and J != 0 breaks integrability *)*)
-(*L  = 8;      (* chain length *)*)
+(*L  = 6;      (* chain length *)*)
 
 
 (* ::Section:: *)
@@ -308,7 +312,7 @@
 (*Print["Time steps: ", Length[tlist]];*)
 
 
-(* ::Chapter:: *)
+(* ::Chapter::Closed:: *)
 (*Hamiltonian*)
 
 
@@ -369,7 +373,7 @@ Print["Levels: ", Length[allVals],
 Print["<r~> = ", N@MeanLevelSpacingRatio[allVals]];
 
 
-(* ::Chapter:: *)
+(* ::Chapter::Closed:: *)
 (*Environment Initial State*)
 
 
@@ -397,7 +401,7 @@ Print["<r~> = ", N@MeanLevelSpacingRatio[allVals]];
 (*Print["rhoE: ", Dimensions[rhoE], "  Tr = ", N@Tr[rhoE], "  (should be {", dE, ",", dE, "} and 1)"];*)
 
 
-(* ::Chapter:: *)
+(* ::Chapter::Closed:: *)
 (*Dynamical Map: Choi Matrix*)
 
 
@@ -701,62 +705,4 @@ Print["Depolarizing  1/dS^2 = ", N[1/dS^2]];
 Print["<S(D)>_T             = ", N@timeAvgEntropy];
 Print["Depolarizing  log(dS^2) = ", N@Log[dS^2]];
 Print["<r~>                 = ", N@MeanLevelSpacingRatio[allVals]];
-
-
-(* ::Chapter::Closed:: *)
-(*L=7*)
-
-
-(* ::Input:: *)
-(*(* ================================================================ *)*)
-(*(* Time-averaged saturation (paper Eq. 8 analogue for T = tMax).   *)*)
-(*(* Uses the trapezoidal rule for both purity and entropy.           *)*)
-(*(*                                                                   *)*)
-(*(* decoherence[] from QMB_offline.wl computes the trapezoidal       *)*)
-(*(* integral of a purity time series and divides by tMax.            *)*)
-(*(* ================================================================ *)*)
-(*purityVals  = #["Purity"]   & /@ results;*)
-(*entropyVals = #["VNEntropy"] & /@ results;*)
-(**)
-(*timeAvgPurity = decoherence[purityVals, tlist];*)
-(**)
-(*timeAvgEntropy =*)
-(*  (1/tMax)*Total[*)
-(*    Table[(entropyVals[[k]] + entropyVals[[k+1]])/2*(tlist[[k+1]] - tlist[[k]]),*)
-(*          {k, Length[tlist]-50, Length[tlist] - 1}]];*)
-(**)
-(*Print["\n--- Saturation summary ---"];*)
-(*Print["<Tr[D^2]>_T          = ", N@timeAvgPurity];*)
-(*Print["Depolarizing  1/dS^2 = ", N[1/dS^2]];*)
-(*Print["<S(D)>_T             = ", N@timeAvgEntropy];*)
-(*Print["Depolarizing  log(dS^2) = ", N@Log[dS^2]];*)
-(*Print["<r~>                 = ", N@MeanLevelSpacingRatio[allVals]];*)
-
-
-(* ::Input:: *)
-(*(* ================================================================ *)*)
-(*(* Time-averaged saturation (paper Eq. 8 analogue for T = tMax).   *)*)
-(*(* Uses the trapezoidal rule for both purity and entropy.           *)*)
-(*(*                                                                   *)*)
-(*(* decoherence[] from QMB_offline.wl computes the trapezoidal       *)*)
-(*(* integral of a purity time series and divides by tMax.            *)*)
-(*(* ================================================================ *)*)
-(*purityVals  = #["Purity"]   & /@ results;*)
-(*entropyVals = #["VNEntropy"] & /@ results;*)
-(**)
-(*timeAvgPurity = decoherence[purityVals, tlist];*)
-(**)
-(*timeAvgEntropy =*)
-(*  (1/tMax)*Total[*)
-(*    Table[(entropyVals[[k]] + entropyVals[[k+1]])/2*(tlist[[k+1]] - tlist[[k]]),*)
-(*          {k, Length[tlist]-50, Length[tlist] - 1}]];*)
-(**)
-(*Print["\n--- Saturation summary ---"];*)
-(*Print["<Tr[D^2]>_T          = ", N@timeAvgPurity];*)
-(*Print["Depolarizing  1/dS^2 = ", N[1/dS^2]];*)
-(*Print["<S(D)>_T             = ", N@timeAvgEntropy];*)
-(*Print["Depolarizing  log(dS^2) = ", N@Log[dS^2]];*)
-(*Print["<r~>                 = ", N@MeanLevelSpacingRatio[allVals]];*)
-
-
 
