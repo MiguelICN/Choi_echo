@@ -20,7 +20,7 @@
 (*Choi Channel Analysis*)
 
 
-(* ::Chapter::Closed:: *)
+(* ::Chapter:: *)
 (*Definitions*)
 
 
@@ -29,19 +29,12 @@
 (*Run this chapter once per session before evaluating anything downstream.*)
 
 
-(*
 (*No Mathematica built-in symbol is used as a local variable name anywhere in*)
 (*this chapter. In particular, the Choi matrix argument is always choiMat,    *)
-(*never D (reserved as the derivative operator).                              *)
+(*never D (reserved as the derivative operator).                          *)
 
 
-
-
-
-
-
-
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*BLOCK 0 -- Kernel and packing utilities*)
 
 
@@ -52,7 +45,7 @@
 (*PackedC[x_] := Developer`ToPackedArray[N[x]];*)
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*BLOCK 1 -- Spectral unitary*)
 
 
@@ -75,7 +68,7 @@
 (*        PackedC@(Transpose[Transpose[Pmat]*ph] . Pinv)]]];*)
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*BLOCK 2 -- Phi projector*)
 
 
@@ -90,7 +83,7 @@
 (*    PackedC@Dyad[phi]];*)
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*BLOCK 3 -- Choi channel builder*)
 
 
